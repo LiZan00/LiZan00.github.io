@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="机器学习安全综述"><meta name="keywords" content="机器学习"><meta name="author" content="Li,undefined"><meta name="copyright" content="Li"><title>机器学习安全综述 | Stateless</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/theme/solarized.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/css/zenburn.min.css"></head><body><div class="reveal"><div class="slides"><section data-markdown data-separator="===" data-separator-vertical="==" data-charset="utf-8"><script type="text/template">
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="机器学习安全综述"><meta name="keywords" content="机器学习"><meta name="author" content="Li,undefined"><meta name="copyright" content="Li"><title>机器学习安全综述 | Stateless</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/css/theme/black.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.6.0/lib/css/zenburn.min.css"></head><body><div class="reveal"><div class="slides"><section data-markdown data-separator="===" data-separator-vertical="==" data-charset="utf-8"><script type="text/template">
 ## 机器学习安全综述
 
 及联邦学习简介
@@ -21,7 +21,7 @@
 
 ===
 
-# 攻击模型描述
+## 攻击模型描述
 
 * 敌手目标——数据机密性+模型可用性
 
@@ -31,13 +31,13 @@
 
 ===
 
-# 安全威胁
+## 安全威胁
 
 ![机器学习过程中常见的安全威胁](/images/p8.png)
 
 ==
 
-## 训练阶段
+### 训练阶段
 
 ![投毒攻击](/images/p7.png)
 
@@ -50,13 +50,13 @@
 
 ==
 
-## 预测阶段
+### 预测阶段——对抗攻击
 
-对抗攻击：精心设计对抗样本，让模型在预测阶段发生错误
+精心设计对抗样本，让模型在预测阶段发生错误
 
 ==
 
-### 如何生成对抗样本？
+#### 如何生成对抗样本？
 
 优化问题、寻找最小扰动r
 $$
@@ -75,23 +75,19 @@ $$
 
 ### 措施
 
-#### 对抗训练
+* 对抗训练：为模型注射“疫苗“
 
-为模型注射“疫苗“
-
-#### 防御精馏
-
-引入博弈游戏，函数化两方的行为，博弈过程中，模型稳健性不断增强
+* 防御精馏：引入博弈游戏，函数化两方的行为，博弈过程中，模型稳健性不断增强
 
 ===
 
-# 隐私威胁
+## 隐私威胁
 
 ![机器学习中常见的隐私威胁](/images/p6.png)
 
 ==
 
-## 同态加密
+### 同态加密
 
 ![同态加密的过程](/images/p9.png)
 
@@ -102,7 +98,11 @@ $$
 * 研究较多、有很多开源的库√
 * 开销和效率存在优化空间...
 
+==
+
 ## 差分隐私
+
+==
 
 ### 差分攻击
 
@@ -128,7 +128,7 @@ $$
 
 ===
 
-# 联邦学习
+## 联邦学习
 
 * 2016年由谷歌提出。
 * 将数据“孤岛”整合到一起，在不发生隐私泄露的前提下。
