@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content><meta name="keywords" content><meta name="author" content="Li"><meta name="copyright" content="Li"><title>Stateless</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">1.</span> <span class="toc-text"> 索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事务"><span class="toc-number">2.</span> <span class="toc-text"> 事务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#事务的acid特性"><span class="toc-number">2.1.</span> <span class="toc-text"> 事务的ACID特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务故障"><span class="toc-number">2.2.</span> <span class="toc-text"> 事务故障</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#转储"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 转储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志文件"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 日志文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#恢复步骤"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 恢复步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#并发执行"><span class="toc-number">3.</span> <span class="toc-text"> 并发执行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一级封锁协议"><span class="toc-number">3.1.</span> <span class="toc-text"> 一级封锁协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二级封锁协议"><span class="toc-number">3.2.</span> <span class="toc-text"> 二级封锁协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三级封锁协议"><span class="toc-number">3.3.</span> <span class="toc-text"> 三级封锁协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#活锁死锁"><span class="toc-number">4.</span> <span class="toc-text"> 活锁&amp;死锁</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1559726774270&amp;di=964c2fda9ac485d43adb0339ca9f6640&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201804%2F21%2F20180421094257_gmjwv.jpg"></div><div class="author-info__name text-center">Li</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/LiZan00">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">9</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">1</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://s2.ax1x.com/2019/05/31/VQrml9.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Stateless</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">无题</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-06-17</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="索引"><a class="markdownIt-Anchor" href="#索引"></a> 索引</h1>
+<ol>
+<li></li>
+<li>
+<p>本身作为一个单独的数据库对象被存储，而不是表中的一项</p>
+</li>
+<li>
+<p>索引不是越多越好</p>
+</li>
+</ol>
+<p>高效的索引：复杂数据结构，数据的更新维护很麻烦</p>
+<p>无索引：把全表都扫描一遍才能查找</p>
+<p>针对一个列（简单索引）或者几个列（复合索引）来创建索引</p>
+<p>存储这个行的数据块的地址</p>
+<p>基本单位：块</p>
+<p>性能指标：读取了多少个文件块（进行了多少次I/O操作）</p>
+<p>强烈建议使用这个索引？</p>
+<p>用索引工作的过程？</p>
+<p>与用select *的工作过程一样</p>
+<h1 id="事务"><a class="markdownIt-Anchor" href="#事务"></a> 事务</h1>
+<p>防止：其中一个人扣钱了，忽然断电，另一个人没加上</p>
+<p>放到容器里，保证一些操作要么全部执行，要么没有执行</p>
+<p>显式定义</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">begin</span> <span class="keyword">transaction</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">commit</span><span class="comment">--只有到commit，才会真正的起作用</span></span><br></pre></td></tr></table></figure>
+<p>显式定义&amp;隐式定义</p>
+<p>rollback:系统作用，与commit相反，全不做，人工不会用</p>
+<p>隐式定义:orcale</p>
+<p>create、join、等等，它会自动定义一个事务</p>
+<h2 id="事务的acid特性"><a class="markdownIt-Anchor" href="#事务的acid特性"></a> 事务的ACID特性</h2>
+<ul>
+<li>原子性atomicity:要么都做，要么都不做</li>
+<li>一致性consistency:结果必须是从一个一致性状态变到另一个一致性状态</li>
+<li>隔离性isolation:并发执行的各个事务之间不能互相干扰，数据也是隔离的，类似操作系统的互斥；某些数据可以达到隔离效果，有的没有那么严格——隔离级别</li>
+<li>持续性durability:一个事务一旦提交，它对数据库中数据的改变就是永久性的，其他的操作和故障对其执行结果不会有任何影响</li>
+</ul>
+<h2 id="事务故障"><a class="markdownIt-Anchor" href="#事务故障"></a> 事务故障</h2>
+<ul>
+<li>介质故障：备份</li>
+</ul>
+<p>事务故障的恢复：</p>
+<p>清除未完成的事务对数据库的所有修改：undo撤销事务</p>
+<p>将缓冲区中已完成的事务重做：redo所有已提交的事务</p>
+<p>恢复操作的基本原理：冗余</p>
+<p>与之前数据库设计的冗余不一样，那个是多余属性出现冲突，这个指的是数据的备份</p>
+<p>右键——备份</p>
+<h3 id="转储"><a class="markdownIt-Anchor" href="#转储"></a> 转储</h3>
+<p>静态：无运行事务时进行</p>
+<p>动态：与用户事务并发进行</p>
+<p>海量：每次转储全部数据库</p>
+<p>增量：只转储上次转储后更新的数据</p>
+<h3 id="日志文件"><a class="markdownIt-Anchor" href="#日志文件"></a> 日志文件</h3>
+<p>日志文件的格式：单位</p>
+<p>日志文件内容：</p>
+<p>update 1500-&gt;1400</p>
+<p>​	sal=sal-100</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time</td>
+<td>emp</td>
+<td>id</td>
+<td>sal</td>
+<td>1500</td>
+<td>1400</td>
+</tr>
+</tbody>
+</table>
+<p>存变化量是有隐患的：需要判断有没有写到硬盘里——旧值重写</p>
+<p>没写到硬盘里，还是1500，存变化量就变成1600了，有错误；旧值重写只不过是覆盖</p>
+<p>redo操作里同样存在这种问题</p>
+<p>存的是更新的新值和旧值，和操作无关</p>
+<p>原则：登记次序严格按并行事务的时间次序</p>
+<p>必须要先写日志，再写数据库：突发断电</p>
+<h3 id="恢复步骤"><a class="markdownIt-Anchor" href="#恢复步骤"></a> 恢复步骤</h3>
+<p>从事务尾部往前扫描，按时间逆序进行逆操作，一直到把事务里的所有操作都执行完毕。</p>
+<p>有过多少个事务？有过多少个事务的开头</p>
+<p>undo-list redo-list</p>
+<p>检查点：保证不用做大量的REDO操作</p>
+<p>重新开始文件：在restart文件里有检查点记录的，才是有效检查点</p>
+<p>日志缓存区、数据缓存区</p>
+<p>标量子查询只有一行一列 可以转换成一个值的查询，不含groupby一定，但一般会有聚集函数</p>
+<p>where not exists except</p>
+<h1 id="并发执行"><a class="markdownIt-Anchor" href="#并发执行"></a> 并发执行</h1>
+<ul>
+<li>事务串行执行</li>
+<li>交叉并发执行</li>
+<li>同时并发方式</li>
+</ul>
+<p>并发操作的潜在不一致性</p>
+<p>不可重读现象：火车票一买没了</p>
+<p>解决：封锁机制（类似信号量）</p>
+<p>排他锁：写（包含共享锁、能写就能读）；共享锁：读</p>
+<h2 id="一级封锁协议"><a class="markdownIt-Anchor" href="#一级封锁协议"></a> 一级封锁协议</h2>
+<p>修改前必须加写锁、直到事务结束才释放——不存在丢失修改问题、但对读没有限制，可能读到脏数据，不可重复读</p>
+<h2 id="二级封锁协议"><a class="markdownIt-Anchor" href="#二级封锁协议"></a> 二级封锁协议</h2>
+<p>1级封锁协议+读数据前必须加读锁，读完释放读锁</p>
+<p>不可重复读，因为读释放的太早了</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">transaction</span> <span class="keyword">isolation</span> <span class="keyword">level</span> <span class="keyword">read</span> uncommitted</span><br></pre></td></tr></table></figure>
+<p>insert</p>
+<h2 id="三级封锁协议"><a class="markdownIt-Anchor" href="#三级封锁协议"></a> 三级封锁协议</h2>
+<p>insert和Update造成的不可重读——事务结束释放</p>
+<h1 id="活锁死锁"><a class="markdownIt-Anchor" href="#活锁死锁"></a> 活锁&amp;死锁</h1>
+<p>活锁：一直等待</p>
+<p>两段锁协议：遵循，则可串行化</p>
+<p>封锁力度：如果下一级加锁了，这层就不能加锁了。某一行加锁了，整个表不能加锁</p>
+<p>解决：意向锁。如果对任意结点加基本锁，必须先对他的上层结点加意向锁（考试不考）</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Li</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://lizan00.github.io/2019/06/17/索引/">http://lizan00.github.io/2019/06/17/索引/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://lizan00.github.io">Stateless</a>！</span></div></div><div class="post-meta__tag-list"></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://s2.ax1x.com/2019/06/05/VNjIoD.png"><div class="post-qr-code__desc">博主的鸽子公众号</div></div></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/06/17/数据依赖/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav><div class="post-adv"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1335772852&auto=1&height=66"></iframe></div></div></div><footer class="footer-bg" style="background-image: url(https://s2.ax1x.com/2019/05/31/VQrml9.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2019 By Li</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>

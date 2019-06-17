@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content><meta name="keywords" content><meta name="author" content="Li"><meta name="copyright" content="Li"><title>Stateless</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#范式"><span class="toc-number">1.</span> <span class="toc-text"> 范式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#判断bc范式的步骤"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 判断BC范式的步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分解成bcnf的规则"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 分解成BCNF的规则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三范式"><span class="toc-number">1.1.</span> <span class="toc-text"> 第三范式</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#数据依赖"><span class="toc-number">2.</span> <span class="toc-text"> 数据依赖</span></a></li></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1559726774270&amp;di=964c2fda9ac485d43adb0339ca9f6640&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201804%2F21%2F20180421094257_gmjwv.jpg"></div><div class="author-info__name text-center">Li</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/LiZan00">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">9</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">1</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://s2.ax1x.com/2019/05/31/VQrml9.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Stateless</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">无题</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-06-17</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>ER模型转化成关系模型，但可能还不够好，因而要有一些判断依据（规范化概念）——范式</p>
+<p>1.处理实体与属性2.范式：首先要知道候选码是什么；如何知道候选码是什么？怎么判断哪个属性组是候选码？；利用关系依赖理论的六条规则。</p>
+<p>实现？数据结构??</p>
+<p>物理设计：存储？数据块、索引、视图？</p>
+<p>Over</p>
+<p>实体集转化成表，</p>
+<p>简单属性对应一个列、复合属性它的组成成分构成多个列</p>
+<p>导出属性</p>
+<p>一对一不能合并</p>
+<p>多对多：自己生成关系模式，不能合并</p>
+<p>可以合并</p>
+<p>联系集</p>
+<p>可以合并：</p>
+<ul>
+<li>
+<p>一对多</p>
+</li>
+<li>
+<p>多对一</p>
+<p>多对多不能合并</p>
+<p>弱实体的本质：多对一</p>
+</li>
+</ul>
+<p>关系模式仍有冗余——&gt;去掉</p>
+<p>关系模式合适？——<strong>关系规范化</strong></p>
+<p>规范化过程：分解，把大的关系模式拽开（仍然有联系）</p>
+<p>重名会有问题，在重名的位置进行笛卡尔积：有损分解，损失了原来的信息</p>
+<p>分裂一次，总数加一</p>
+<p>进行自然连接，得到的关系等于原来的关系，那就是无损关系</p>
+<p><strong>第二范式：不存在非主属性对于码的部分函数依赖</strong></p>
+<h2 id="范式"><a class="markdownIt-Anchor" href="#范式"></a> 范式</h2>
+<p>一共有六种范式</p>
+<p>一二三范式（单值依赖）、BC范式、多值依赖（四五范式）</p>
+<p>各种范式之间存在联系：用集合来表示</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi>N</mi><mi>F</mi><mo>⊃</mo><mn>2</mn><mi>N</mi><mi>F</mi><mo>⊃</mo><mn>3</mn><mi>N</mi><mi>F</mi><mo>⊃</mo><mi>B</mi><mi>C</mi><mi>N</mi><mi>F</mi><mo>⊃</mo><mn>4</mn><mi>N</mi><mi>F</mi><mo>⊃</mo><mn>5</mn><mi>N</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">1NF\supset2NF\supset3NF\supset BCNF\supset4NF\supset5NF
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord">4</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊃</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span></span></p>
+<p>某一关系模式R为第n范式，可简记为R∈nNF</p>
+<p>关系模式：首先要分析候选码，主码，才能判断范式</p>
+<p>传递函数依赖：非主属性对于码的传递函数依赖，会造成冗余</p>
+<p>去冗余：继续分解，让这种数据以来依赖不存在</p>
+<p>去除非主属性的传递函数依赖，就会变成满足第三范式的关系模式</p>
+<p><strong>既不部分函数依赖于候选码也不传递函数依赖于候选码</strong></p>
+<p>BC：非主和主属性范式都考虑到了</p>
+<p>弱实体集：下划线</p>
+<p>强实体集有简单属性的</p>
+<p>强实体集有复合属性的：用复合层次来表示复合属性，取最底层的作为字段</p>
+<p>多值属性：花括号 表示集合概念，做成子表</p>
+<p>不能出现描述属性的属性</p>
+<p>三元联系——多个实体在一块相互关联</p>
+<p>一个三元联系转化为三个二元联系来表示相同的信息，下面这个被称为关联实体</p>
+<p>关联实例肯定有一个section，也有一个student,所以肯定是完全参与的</p>
+<p>第三范式：冗余。冗余的属性是非主属性</p>
+<p>主属性对于不包含它的码的函数依赖：冗余的原因（学号、姓名</p>
+<p>解决方式：分解——》BC范式</p>
+<p>处理非平凡函数依赖</p>
+<p>所有非平凡的、左部不可约（最小的）的函数依赖的决定因素是候选码，则是BCNF</p>
+<h4 id="判断bc范式的步骤"><a class="markdownIt-Anchor" href="#判断bc范式的步骤"></a> 判断BC范式的步骤</h4>
+<ol>
+<li>确定候选码
+<ul>
+<li>得到函数依赖集的闭包</li>
+<li>属性的闭包</li>
+</ul>
+</li>
+<li>遍历那两个条件（平凡、函数依赖于候选码）</li>
+</ol>
+<h4 id="分解成bcnf的规则"><a class="markdownIt-Anchor" href="#分解成bcnf的规则"></a> 分解成BCNF的规则</h4>
+<ol>
+<li>R作为该关系模式的全集</li>
+<li>把不听话的规则删掉</li>
+</ol>
+<p>图8.6有误，应该指向instructor而不是department</p>
+<h3 id="第三范式"><a class="markdownIt-Anchor" href="#第三范式"></a> 第三范式</h3>
+<p>只管非主属性，不管主属性</p>
+<p>主属性A被包含在R的候选码</p>
+<p>一个属性没有被函数依赖的被决定因素里出现过，他一定是候选码的组成部分</p>
+<h2 id="数据依赖"><a class="markdownIt-Anchor" href="#数据依赖"></a> 数据依赖</h2>
+<p>属性之间相关性的表述，体现属性之间的对应关系，是<strong>语义的体现</strong>。</p>
+<ol>
+<li>
+<p>函数依赖：一一映射</p>
+<blockquote>
+<p>如：学号到学生姓名的映射，是多对一的映射关系</p>
+</blockquote>
+<ul>
+<li>可以减少数据冗余</li>
+<li>对于所有关系实例都成立</li>
+</ul>
+<p>完全函数依赖：一个属性组能够完全确定属性组，且其真子集8能完全确定属性组，称为完全函数依赖</p>
+</li>
+</ol>
+<p>确定关系模式：确定关系模式的主码</p>
+<p>学号+课程号</p>
+<p>如果把所有的有数据依赖的属性都放在一个关系模式里，在进行数据更改的时候会有问题</p>
+<blockquote>
+<p>删除一个人选的课，他这个人的所有信息都无了</p>
+</blockquote>
+<p>平凡的——不值一提的，废话</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Li</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://lizan00.github.io/2019/06/17/数据依赖/">http://lizan00.github.io/2019/06/17/数据依赖/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://lizan00.github.io">Stateless</a>！</span></div></div><div class="post-meta__tag-list"></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://s2.ax1x.com/2019/06/05/VNjIoD.png"><div class="post-qr-code__desc">博主的鸽子公众号</div></div></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/06/17/索引/"><i class="fa fa-chevron-left">  </i><span></span></a></div><div class="next-post pull-right"><a href="/2019/06/17/分解？？/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav><div class="post-adv"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1335772852&auto=1&height=66"></iframe></div></div></div><footer class="footer-bg" style="background-image: url(https://s2.ax1x.com/2019/05/31/VQrml9.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2019 By Li</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>
